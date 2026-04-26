@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  blurb: string;
+  href: string;
+  linkText?: string;
+}
+
+const { title, blurb, href, linkText = 'See more →' } = Astro.props;
+---
+
+<section class="section-preview">
+  <h2>{title}</h2>
+  <p>{blurb}</p>
+  <a href={href} class="section-link">{linkText}</a>
+</section>
+
+<style>
+  .section-preview {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 0.75rem 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1.25rem 0;
+    max-width: 560px;
+  }
+
+  .section-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .section-link:hover {
+    color: var(--color-accent-hover);
+  }
+</style>
