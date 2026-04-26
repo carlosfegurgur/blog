@@ -1,0 +1,98 @@
+---
+import GitHubIcon from '../assets/icons/github.svg';
+import LinkedInIcon from '../assets/icons/linkedin.svg';
+import InstagramIcon from '../assets/icons/instagram.svg';
+---
+
+<section class="hero">
+  <p class="hero-greeting">Hafa Adai, I'm</p>
+  <h1 class="hero-title">Car<span class="accent">los</span><br/>Fegurgur</h1>
+  <p class="hero-subtitle">Frontend Developer from Guam, based in Chicago.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn">Reach Out</a>
+    <div class="social-links">
+      <a href="https://github.com/carlosfegurgur" target="_blank" rel="noopener"><GitHubIcon /></a>
+      <a href="https://linkedin.com/in/cfegurgur" target="_blank" rel="noopener"><LinkedInIcon /></a>
+      <a href="https://instagram.com/carlosaqf" target="_blank" rel="noopener"><InstagramIcon /></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 6rem 0 4rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-greeting {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 1rem 0;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+  }
+
+  .accent {
+    color: var(--color-text);
+  }
+
+  .hero-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0 0 2.5rem 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-bg);
+    background-color: var(--color-accent);
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-bg);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    transition: color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: var(--color-accent);
+  }
+</style>

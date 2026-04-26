@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  url: string;
+}
+
+const { title, description, pubDate, url } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-us', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="blog-card">
+  <a href={url} class="blog-card-link">
+    <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class="read-more">Read more →</span>
+  </a>
+</article>
+
+<style>
+  .blog-card {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+    transition: border-color 0.2s ease;
+  }
+
+  .blog-card:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .blog-card-link {
+    text-decoration: none;
+    display: block;
+  }
+
+  .blog-card-link:hover h3 {
+    color: var(--color-accent);
+  }
+
+  time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0.4rem 0 0.5rem 0;
+    transition: color 0.2s ease;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .read-more {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+  }
+</style>
