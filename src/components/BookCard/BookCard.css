@@ -1,0 +1,79 @@
+.book-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 2px solid red;
+}
+
+.book-cover {
+  width: 45px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.book-cover-placeholder {
+  width: 45px;
+  height: 68px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.book-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.book-author {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.book-progress-track {
+  width: 100px;
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.book-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.book-progress-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.book-rating {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin: 0;
+  margin-top: 0.25rem;
+}

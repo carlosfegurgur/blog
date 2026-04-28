@@ -1,16 +1,24 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = (await getCollection('projects', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
-<BaseLayout
-	title="Projects"
-	description="Projects I've worked on"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus            
-    </p>
+<BaseLayout title="Project">
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {
+      posts.map((post: any) => {
+        console.log("TEST", post.data);
+        return (
+          <li>
+            <a href={`/projects/${post.id}`}>{post.data.title}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
 </BaseLayout>

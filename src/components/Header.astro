@@ -1,13 +1,12 @@
 ---
-import { SITE_TITLE, SITE_TITLE_SHORT } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE_SHORT } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
   <nav>
     <a href="/" class="site-title">
-      <span class="full-name">{SITE_TITLE}</span>
-      <span class="short-name">{SITE_TITLE_SHORT}</span>
+      {SITE_TITLE_SHORT}
     </a>
     <div class="nav-links">
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -38,14 +37,11 @@ import HeaderLink from './HeaderLink.astro';
   }
 
   .site-title {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1.2rem;
     color: var(--color-accent);
     text-decoration: none;
-  }
-
-  .short-name {
-    display: none;
+	font-weight: 900;
   }
 
   .nav-links {
@@ -54,7 +50,7 @@ import HeaderLink from './HeaderLink.astro';
   }
 
   .nav-links a {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 0.85rem;
     text-decoration: none;
     color: var(--color-text);
@@ -69,14 +65,6 @@ import HeaderLink from './HeaderLink.astro';
   }
 
   @media (max-width: 600px) {
-    .full-name {
-      display: none;
-    }
-
-    .short-name {
-      display: inline;
-    }
-
     .nav-links {
       gap: 1.2rem;
     }

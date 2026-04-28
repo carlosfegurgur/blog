@@ -1,35 +1,39 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import SectionPreview from '../components/SectionPreview.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import BlogCard from '../components/BlogCard.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { getCollection } from 'astro:content';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionPreview from "../components/SectionPreview.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import BlogCard from "../components/BlogCard.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import CurrentlyReading from "../components/CurrentlyReading";
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5);
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'A short description of what this project does and the problem it solves.',
-    liveUrl: 'https://example.com',
-    writeupUrl: '/blog/project-one',
+    title: "Project One",
+    description:
+      "A short description of what this project does and the problem it solves.",
+    liveUrl: "https://example.com",
+    writeupUrl: "/blog/project-one",
   },
   {
-    title: 'Project Two',
-    description: 'A short description of what this project does and the problem it solves.',
-    liveUrl: 'https://example.com',
-    writeupUrl: '/blog/project-two',
+    title: "Project Two",
+    description:
+      "A short description of what this project does and the problem it solves.",
+    liveUrl: "https://example.com",
+    writeupUrl: "/blog/project-two",
   },
   {
-    title: 'Project Three',
-    description: 'A short description of what this project does and the problem it solves.',
-    liveUrl: 'https://example.com',
-    writeupUrl: '/blog/project-three',
+    title: "Project Three",
+    description:
+      "A short description of what this project does and the problem it solves.",
+    liveUrl: "https://example.com",
+    writeupUrl: "/blog/project-three",
   },
 ];
 ---
@@ -47,9 +51,7 @@ const projects = [
   <section class="projects-section">
     <h2>Projects</h2>
     <div class="projects-grid">
-      {projects.map((project) => (
-        <ProjectCard {...project} />
-      ))}
+      {projects.map((project) => <ProjectCard {...project} />)}
     </div>
     <a href="/projects" class="section-link">See all projects →</a>
   </section>
@@ -57,24 +59,26 @@ const projects = [
   <section class="blog-section">
     <h2>Writing</h2>
     <div class="blog-list">
-      {posts.map((post) => (
-        <BlogCard
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-          url={`/blog/${post.id}`}
-        />
-      ))}
+      {
+        posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            url={`/blog/${post.id}`}
+          />
+        ))
+      }
     </div>
     <a href="/blog" class="section-link">See all posts →</a>
   </section>
 
-  <SectionPreview
-    title="Now"
-    blurb="What I'm currently focused on, reading, and working on."
-    href="/now"
-    linkText="See what I'm up to →"
-  />
+  <section class="now-preview">
+    <h2>Now</h2>
+    <p>What I'm currently focused on, reading, and working on.</p>
+    <CurrentlyReading client:visible />
+    <a href="/now" class="section-link">See more →</a>
+  </section>
 
   <ContactForm />
 </BaseLayout>
@@ -88,7 +92,7 @@ const projects = [
 
   .projects-section h2,
   .blog-section h2 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-accent);
@@ -107,7 +111,7 @@ const projects = [
   }
 
   .section-link {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 0.85rem;
     color: var(--color-accent);
     text-decoration: none;
