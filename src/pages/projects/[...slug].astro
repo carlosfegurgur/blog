@@ -15,9 +15,27 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <h1>{post.data.title}</h1>
-  <time datetime={post.data.pubDate.toISOString()}>
-    {post.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}
-  </time>
+  <a href="/projects">&larr; Back to Projects</a>
+  <div class="header">
+    <h1>{post.data.title}</h1>
+    <time datetime={post.data.lastUpdated.toISOString()}>
+      {post.data.lastUpdated.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </time>
+  </div>
+  <div class="banner">
+    <img src="/images/rrcLogo.png" height={300} width={300} />
+  </div>
   <Content />
 </BaseLayout>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+  }
+</style>

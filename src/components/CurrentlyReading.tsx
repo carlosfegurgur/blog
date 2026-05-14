@@ -1,5 +1,6 @@
 import { useHardcover } from "../hooks/useHardcover";
 import BookCard from "./BookCard/BookCard";
+import "./CurrentlyReading.css";
 
 export default function CurrentlyReading() {
   const { data, loading, error } = useHardcover();

@@ -21,11 +21,13 @@ const projects = defineCollection({
 	  z.object({
 		title: z.string(),
 		description: z.string(),
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
+		lastUpdated: z.coerce.date(),
 		heroImage: image().optional(),
 		tags: z.array(z.string()).optional(),
+    repoUrl: z.string().url(),
+    liveUrl: z.string().url(),
 		draft: z.boolean().default(false),
+    bookSlug: z.string().optional(),
 	  }),
 });
 

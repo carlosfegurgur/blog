@@ -1,5 +1,6 @@
 import { useHardcover } from "../hooks/useHardcover";
 import BookCard from "./BookCard/BookCard";
+import "./RecentlyRead.css";
 
 export default function RecentlyRead() {
   const BOOK_LIMIT = 3;

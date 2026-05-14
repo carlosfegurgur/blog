@@ -34,6 +34,7 @@ export const HARDCOVER_QUERY = `{
                 }
             }
             review
+            review_raw
             rating
             last_read_date
         }
