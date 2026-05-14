@@ -1,0 +1,11 @@
+.currently-reading {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .currently-reading {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

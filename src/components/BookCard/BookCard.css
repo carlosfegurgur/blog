@@ -1,0 +1,111 @@
+.book-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.book-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background-color: var(--color-bg-secondary);
+}
+
+.book-card-link .book-card {
+  transition: transform 0.2s ease;
+}
+
+.book-card-link:hover .book-card {
+  transform: scale(1.02);
+}
+
+.book-cover-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.book-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+}
+
+.book-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+}
+
+.book-overlay-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.book-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #f0e8d0;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(240, 232, 208, 0.7);
+  margin: 0;
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.book-progress-track {
+  flex: 1;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.book-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.book-progress-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(240, 232, 208, 0.7);
+  white-space: nowrap;
+}
+
+.book-rating {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin: 0;
+  margin-top: 0.2rem;
+  letter-spacing: 0.05em;
+}

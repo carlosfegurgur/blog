@@ -2,36 +2,33 @@
 	  TOKENS
 	  ============================================ */
 :root {
-  /* Colors - Light */
-  --color-bg: #f7f0d4;
-  --color-bg-secondary: #ede6c8;
-  --color-text: #1a1a1a;
-  --color-text-muted: #5a5347;
-  --color-accent: #c96a2a;
-  --color-accent-hover: #a85520;
-  --color-border: #d4c9a8;
+  --color-bg: #faf4e1;
+  --color-bg-secondary: #ede5c0;
+  --color-text: #1c1a14;
+  --color-text-muted: #6b5f3e;
+  --color-accent: #b8862a;
+  --color-accent-hover: #9a6e1f;
+  --color-border: #d4c49a;
 
-  /* Typography */
   --font-heading: "DM Sans", sans-serif;
   --font-body: "IBM Plex Mono", monospace;
 
-  /* Spacing */
   --max-width: 860px;
   --spacing-page: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f0f0f;
-    --color-bg-secondary: #1a1a1a;
-    --color-text: #e8e4d9;
-    --color-text-muted: #8a8070;
-    --color-accent: #c96a2a;
-    --color-accent-hover: #e07830;
-    --color-border: #2e2e2e;
+    --color-bg: #0f0e0b;
+    --color-bg-secondary: #1a1912;
+    --color-text: #f0e8d0;
+    --color-text-muted: #f0e8d0;
+    /* --color-text-muted: #8c7a52; */
+    --color-accent: #b8862a;
+    --color-accent-hover: #d4a040;
+    --color-border: #2e2a1e;
   }
 }
-
 /* ============================================
 	  RESET & BASE
 	  ============================================ */

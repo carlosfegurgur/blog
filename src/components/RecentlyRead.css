@@ -1,0 +1,11 @@
+.recently-read {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .recently-read {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
